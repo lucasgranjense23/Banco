@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p><input type="number" nome="minimo" placeholder='Valor Minimo' id="minimo">
+            
+        <p><input type="number" nome="maximo" placeholder='Valor Maximo'id="maximo">
+           
+        
+    </div>
+    <p><input type="button" value="Calcular" id="calcular"></p>
+    <div id="res">Aguardando numeros...</div>
+
+    <script>
+        
+        let valorMinimo = document.querySelector('#minimo')
+        let valorMaximo = document.querySelector('#maximo')
+        let btnCalcular = document.querySelector('#calcular')
+        let resposta = document.querySelector('#res')
+        
+        
+        btnCalcular.onclick = function () { 
+            //resposta.innerHTML+=`${valorMinimo.value} e ${valorMaximo.value}`
+            const nMinimo = valorMinimo.value
+            const nMaximo = valorMaximo.value
+            if(nMinimo.length == '' || nMaximo.length == ''){
+                alert('[ERROR]')
+            }else if(valorMaximo.value > valorMinimo.value){
+                alert('[ERROR]')
+            
+            }else{
+                for(let i = Number(valorMinimo) ; i < Number(valorMaximo) ; i++){
+                    if((i%2 == 0) && (i%3 == 0)){
+                        resposta.innerHTML = `divisivel`
+                    }
+                }
+            }
+            
+        }
+
+    </script>
+    
+</body>
+</html>
